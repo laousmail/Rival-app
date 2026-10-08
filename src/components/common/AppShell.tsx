@@ -1,7 +1,14 @@
-import { Link, Outlet } from 'react-router'
+import { useEffect } from 'react'
+import { Link, Outlet, useLocation } from 'react-router'
 import { BottomNav } from './BottomNav.tsx'
 
 export function AppShell() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    document.getElementById('content')?.scrollTo(0, 0)
+  }, [pathname])
+
   return (
     <div className="min-h-dvh bg-stage text-cream">
       <a

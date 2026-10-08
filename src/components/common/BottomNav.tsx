@@ -36,7 +36,7 @@ export function BottomNav() {
 
 function NavMark({ label }: { label: (typeof items)[number]['label'] }) {
   const paths: Record<(typeof items)[number]['label'], string> = {
-    Battle: 'M4 16h6V6h4v10h6l-8 8-8-8z',
+    Battle: 'M6 9h3.5v8H6V9zM14.5 5H18v12h-3.5V5z',
     Goals: 'M5 6h14v12H5V6zm3 3h8M8 12h8M8 15h5',
     Character: 'M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-6 7c1-3 3-4 6-4s5 1 6 4',
     Stats: 'M5 16V10h3v6H5zm5 0V6h3v10h-3zm5 0v-4h3v4h-3z',
