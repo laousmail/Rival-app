@@ -1,0 +1,11 @@
+{
+	"appId": "app.rival.daily",
+	"appName": "RIVAL",
+	"webDir": "dist",
+	"backgroundColor": "#12151e",
+	"ios": {
+		"contentInset": "never",
+		"backgroundColor": "#12151e"
+	},
+	"packageClassList": []
+}
