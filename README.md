@@ -2,7 +2,7 @@
 
 A mobile-first daily-goal battle. Finish your goals and you get stronger. Leave them open and your rival takes the XP.
 
-This repository is **Phase 1 — Foundation** only. The app launches, routes across five tabs, and holds the folder boundaries for later phases. There is no battle math, no saving, and no character art yet.
+RIVAL saves on this device. Name yourself, name a rival, set three goals, and the battle starts. Finish a goal before your rival takes the XP. End the day to see the result. A refresh keeps the save.
 
 ## Scripts
 
@@ -11,6 +11,7 @@ npm install
 npm run dev
 npm run build
 npm run lint
+npm test
 npm run preview
 ```
 
@@ -27,7 +28,7 @@ src/
 │   ├── stats/
 │   ├── settings/
 │   └── common/
-├── game/            calculations arrive in Phase 2
+├── game/            XP, battles, levels, streaks
 ├── data/            fixed presets from the specification
 ├── state/           empty until the store exists
 ├── persistence/     empty until saveGame / loadGame / resetGame
@@ -37,9 +38,10 @@ src/
 
 Tabs: Battle, Goals, Character, Stats, Settings. Battle is the index route.
 
-## Phase 1 boundary
+## Engine notes
 
 - UI does not calculate XP, levels, streaks, or battle results.
 - Nothing reads or writes `localStorage`.
-- Difficulty bands in `src/data/difficulties.ts` are the specification ranges. Exact rewards are chosen in Phase 2.
-- Level examples in the specification are not locked in as the curve.
+- Difficulty rewards are fixed inside the specification bands. Hard is the calculus example: 300 XP, 4 per minute, cap 300.
+- Levels use 0, 500, 1,200, 2,000, and 3,000. After level 5, each level costs 1,000 XP more.
+- A day counts toward the streak when it has at least one goal. A loss still counts. A missed day resets the current streak. There is no recovery day yet.

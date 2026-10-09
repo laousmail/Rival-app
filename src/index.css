@@ -31,6 +31,19 @@ body {
   min-height: 100dvh;
 }
 
+@keyframes xp-tick {
+  0% {
+    filter: brightness(1.8);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+
+.xp-tick {
+  animation: xp-tick 450ms ease-out;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
