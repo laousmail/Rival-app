@@ -1,6 +1,6 @@
 /**
  * Core data shapes from specification section 5.
- * Declarations only — calculations belong to later phases.
+ * Calculations live in `src/game`. Components must not redo them.
  *
  * Timestamps are epoch milliseconds so elapsed time can be derived
  * with the section 7 formula. `DailyBattle.date` is the calendar day
