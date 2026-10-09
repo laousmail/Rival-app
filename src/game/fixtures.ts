@@ -1,3 +1,4 @@
+import { DEFAULT_CHARACTER } from '../data/appearance.ts'
 import type { DailyBattle, Goal, User } from '../types/game.ts'
 import { createBattle } from './battle.ts'
 
@@ -20,7 +21,7 @@ export function makeUser(overrides: Partial<User> = {}): User {
     wins: 0,
     losses: 0,
     draws: 0,
-    character: {},
+    character: { ...DEFAULT_CHARACTER },
     ...overrides,
   }
 }

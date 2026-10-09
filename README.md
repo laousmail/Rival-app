@@ -2,7 +2,7 @@
 
 A mobile-first daily-goal battle. Finish your goals and you get stronger. Leave them open and your rival takes the XP.
 
-Phase 1 is the five-tab shell. Phase 2 is the game engine in `src/game`. Phase 3 is the battle screen: create a goal, watch rival XP, complete it once. A refresh still clears the session. Character art is not in yet.
+RIVAL saves on this device. Name yourself, name a rival, set three goals, and the battle starts. Finish a goal before your rival takes the XP. End the day to see the result. A refresh keeps the save.
 
 ## Scripts
 

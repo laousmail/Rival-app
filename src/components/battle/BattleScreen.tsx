@@ -1,10 +1,13 @@
 import { Link } from 'react-router'
+import { useGame } from '../../state/useGame.ts'
+import { Button } from '../common/Button.tsx'
 import { ScreenHeader } from '../common/ScreenHeader.tsx'
 import { CompletionBanner } from '../common/CompletionBanner.tsx'
 import { GoalList } from '../goals/GoalList.tsx'
 import { BattleHUD } from './BattleHUD.tsx'
 
 export function BattleScreen() {
+  const { endDay, battle } = useGame()
   return (
     <section aria-labelledby="battle-title">
       <ScreenHeader
@@ -24,6 +27,9 @@ export function BattleScreen() {
       >
         Add a goal
       </Link>
+      <Button tone="quiet" className="mt-4 w-full" onClick={endDay} disabled={battle.goals.length === 0}>
+        End today
+      </Button>
     </section>
   )
 }

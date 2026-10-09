@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link, Outlet, useLocation } from 'react-router'
 import { BottomNav } from './BottomNav.tsx'
+import { DayResult } from './DayResult.tsx'
 
 export function AppShell() {
   const { pathname } = useLocation()
@@ -17,7 +18,8 @@ export function AppShell() {
       >
         Skip to content
       </a>
-      <div className="mx-auto flex h-dvh w-full max-w-[390px] flex-col bg-ink shadow-[0_0_0_1px_#343c50]">
+      <div className="relative mx-auto flex h-dvh w-full max-w-[390px] flex-col bg-ink shadow-[0_0_0_1px_#343c50]">
+        <DayResult />
         <header className="flex shrink-0 items-center justify-between border-b border-line px-4 pt-[max(0.75rem,env(safe-area-inset-top))] pb-3">
           <Link
             to="/"

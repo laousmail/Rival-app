@@ -16,17 +16,23 @@ export type BattleResult = 'active' | 'victory' | 'defeat' | 'draw'
 /** Section 15. The engine decides this in Phase 2; the shell does not. */
 export type BattleState = 'dominating' | 'ahead' | 'close' | 'behind' | 'critical'
 
-/**
- * Player customization (section 19).
- * Concrete fields arrive in Phase 5. Earlier phases must not invent cosmetics.
- */
-export type Character = Record<string, never>
+/** Player look from specification section 19. These are colors and shapes, not stats. */
+export interface Character {
+  skin: string
+  hair: string
+  hairColor: string
+  outfit: string
+  accessory: string
+  palette: string
+}
 
-/**
- * Rival look (section 20: body, hair, outfit, color).
- * Concrete fields arrive in Phase 5.
- */
-export type RivalAppearance = Record<string, never>
+/** Rival look from specification section 20. */
+export interface RivalAppearance {
+  body: string
+  hair: string
+  outfit: string
+  color: string
+}
 
 export interface User {
   id: string
@@ -70,4 +76,6 @@ export interface DailyBattle {
   result: BattleResult
   startedAt: number
   endedAt?: number
+  /** True once rival XP was ahead of the player during this day. */
+  trailed?: boolean
 }
