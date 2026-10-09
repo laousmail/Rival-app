@@ -1,4 +1,5 @@
 import { ScreenHeader } from '../common/ScreenHeader.tsx'
+import { CompletionBanner } from '../common/CompletionBanner.tsx'
 import { GoalCreator } from './GoalCreator.tsx'
 import { GoalList } from './GoalList.tsx'
 
@@ -9,10 +10,13 @@ export function GoalsScreen() {
         titleId="goals-title"
         eyebrow="Goals"
         title="Goals"
-        note="Layout only. Creating and completing goals is not active yet."
+        note="A name, a category, and a difficulty. You never type the XP."
       />
-      <GoalList />
+      <CompletionBanner />
       <GoalCreator />
+      <div className="mt-5">
+        <GoalList />
+      </div>
     </section>
   )
 }

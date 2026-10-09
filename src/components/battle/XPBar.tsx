@@ -2,10 +2,11 @@ import { ProgressBar } from '../common/ProgressBar.tsx'
 
 type XPBarProps = {
   label: string
+  value: number
+  max: number
   tone: 'player' | 'rival'
 }
 
-/** Empty battle meter. Phase 3 feeds it live XP. Phase 1 always shows an empty bar. */
-export function XPBar({ label, tone }: XPBarProps) {
-  return <ProgressBar label={label} value={0} max={1} tone={tone} />
+export function XPBar({ label, value, max, tone }: XPBarProps) {
+  return <ProgressBar label={label} value={value} max={max} tone={tone} />
 }
