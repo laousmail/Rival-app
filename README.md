@@ -17,6 +17,22 @@ npm run preview
 
 Canonical layout width is 390px. On a desktop the shell stays that width and centers on the page.
 
+## iPhone
+
+The `ios/` folder is an Xcode project. It installs this same app on an iPhone. Building it needs a Mac with Xcode, and the iPhone signed in with your Apple ID.
+
+On the Mac:
+
+```bash
+npm install
+npm run ios:sync
+open ios/App/App.xcodeproj
+```
+
+In Xcode, select your iPhone as the run destination. Open the App target, then Signing & Capabilities, and choose your Team. Press Run. The first time, the phone asks you to trust the developer under Settings, General, VPN & Device Management.
+
+The bundle id is `app.rival.daily`. Change it in Xcode if Apple says it is already taken. After you change the web app, run `npm run ios:sync` again before the next Run.
+
 ## Layout
 
 ```
